@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { connect } from "react-redux";
-import { _fetchUser } from "../reducers/authReducer";
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { _fetchUser } from '../reducers/authReducer';
 
-import Header from "./Header";
-import Landing from "./Landing";
-import Dashboard from "./Dashboard";
-import BlogNew from "./blogs/BlogNew";
-import BlogShow from "./blogs/BlogShow";
+import Header from './Header';
+import Landing from './Landing';
+import Dashboard from './Dashboard';
+import BlogNew from './blogs/BlogNew';
+import BlogShow from './blogs/BlogShow';
 
 class App extends Component {
   componentDidMount() {

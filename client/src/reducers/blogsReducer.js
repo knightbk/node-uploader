@@ -1,9 +1,9 @@
-import axios from "axios";
-import mapKeys from "lodash/mapKeys";
-import { createSlice } from "redux-starter-kit";
+import axios from 'axios';
+import mapKeys from 'lodash/mapKeys';
+import { createSlice } from 'redux-starter-kit';
 
 const blogs = createSlice({
-  slice: "blogs",
+  slice: 'blogs',
   initialState: {},
   reducers: {
     fetchBlog: (state, action) => {
@@ -11,7 +11,7 @@ const blogs = createSlice({
       state[blog._id] = blog;
     },
     fetchBlogs: (state, action) => {
-      return { ...state, ...mapKeys(action.payload, "_id") };
+      return { ...state, ...mapKeys(action.payload, '_id') };
     }
   }
 });
@@ -26,14 +26,14 @@ export const _fetchBlog = id => async dispatch => {
 };
 
 export const _submitBlog = (values, history) => async dispatch => {
-  const res = await axios.post("/api/blogs", values);
-  history.push("/blogs");
+  const res = await axios.post('/api/blogs', values);
+  history.push('/blogs');
   const payload = res.data;
   dispatch(actions.fetchBlog(payload));
 };
 
 export const _fetchBlogs = () => async dispatch => {
-  const res = await axios.get("/api/blogs");
+  const res = await axios.get('/api/blogs');
   const payload = res.data;
   dispatch(actions.fetchBlogs(payload));
 };

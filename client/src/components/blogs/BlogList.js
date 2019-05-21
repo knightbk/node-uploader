@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import map from "lodash/map";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { _fetchBlogs } from "../../reducers/blogsReducer";
+import React, { Component } from 'react';
+import map from 'lodash/map';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { _fetchBlogs } from '../../reducers/blogsReducer';
 
 class BlogList extends Component {
   componentDidMount() {

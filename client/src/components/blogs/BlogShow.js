@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { _fetchBlog } from "../../reducers/blogsReducer";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { _fetchBlog } from '../../reducers/blogsReducer';
 
 class BlogShow extends Component {
   componentDidMount() {
@@ -9,7 +9,7 @@ class BlogShow extends Component {
 
   render() {
     if (!this.props.blog) {
-      return "";
+      return '';
     }
 
     const { title, content } = this.props.blog;
