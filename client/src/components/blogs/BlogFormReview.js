@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
-import * as actions from '../../actions';
+import { _submitBlog } from '../../reducers/blogsReducer';
 
 class BlogFormReview extends Component {
   renderFields() {
@@ -42,9 +42,9 @@ class BlogFormReview extends Component {
   onSubmit(event) {
     event.preventDefault();
 
-    const { submitBlog, history, formValues } = this.props;
+    const { _submitBlog, history, formValues } = this.props;
 
-    submitBlog(formValues, history);
+    _submitBlog(formValues, history);
   }
 
   render() {
@@ -63,4 +63,7 @@ function mapStateToProps(state) {
   return { formValues: state.form.blogForm.values };
 }
 
-export default connect(mapStateToProps, actions)(withRouter(BlogFormReview));
+export default connect(
+  mapStateToProps,
+  { _submitBlog }
+)(withRouter(BlogFormReview));
